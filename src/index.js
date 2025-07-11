@@ -1,6 +1,6 @@
 import app from './app.js';
 import connectDB from './db/db.js';
-import dotenv from 'dotenv'
+import loadRoutes from './routes/index.route.js'
 
 connectDB()
 .then(() =>{
@@ -14,3 +14,5 @@ connectDB()
 .catch(err => {
     console.log("mongoDB connection Failed", err)
 })
+
+loadRoutes(app)
